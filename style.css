@@ -1,0 +1,67 @@
+/* This file contains the custom CSS necessary for the portfolio, 
+    primarily focusing on smooth transitions, font application, and 
+    the custom timeline structure, as the majority of styling is handled 
+    by Tailwind CSS utility classes in the HTML.
+*/
+
+/* Apply the custom font across the body */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a; /* Slate 900 */
+}
+
+/* Custom transitions and transformations for links and cards */
+.nav-link:hover {
+    color: #3b82f6; /* Blue 500 */
+    transition: color 0.3s ease;
+}
+
+.card-project:hover {
+    /* Lift and slightly enlarge the card on hover */
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom timeline styles for Experience/Education section 
+    Note: These styles are mostly only visible on medium (md) screens and up.
+*/
+
+/* Vertical line for the timeline */
+.timeline-line {
+    position: absolute;
+    left: 20px; /* Position the line correctly for mobile layout */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #334155; /* Slate 700 */
+}
+
+/* Responsive adjustment for the timeline line positioning on desktop */
+@media (min-width: 768px) {
+    .timeline-line {
+        left: 60px; /* Adjust position for larger screen padding (pl-16) */
+    }
+}
+
+/* Timeline dot position adjustment for different screen sizes */
+.timeline-dot {
+    /* For smaller screens (pl-8), dot needs to be -6 (24px) from left edge of container */
+    left: -6px; 
+}
+@media (min-width: 768px) {
+    .timeline-dot {
+        /* For larger screens (pl-16), dot needs to be -2 (8px) from left edge of container */
+        left: -2px;
+    }
+}
+
+/* Animation for smooth component fade-in (e.g., Hero section text) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+}

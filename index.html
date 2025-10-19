@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inam Ullah | Front-End Developer Portfolio</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">INAM ULLAH</a>
+                
+                <!-- Desktop Menu (Hidden on Small Screens) -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Experience & Education</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Visible on Small Screens) -->
+                <button id="mobile-menu-button" type="button" class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none focus:text-blue-400 transition duration-300 p-2 rounded-lg">
+                    <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+                    <i id="close-icon" data-lucide="x" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay (Fixed right-hand sidebar - initially hidden) -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-40 md:hidden hidden"> 
+        <!-- Backdrop - Click to close -->
+        <div id="mobile-menu-backdrop" class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+
+        <!-- Menu Panel (Slides from the right, limited width) -->
+        <div id="mobile-menu-panel" class="fixed top-0 right-0 w-64 max-w-full h-full bg-slate-800 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+            
+            <!-- Adjust padding to clear fixed navbar height (16 = 4rem) -->
+            <div class="p-4 pt-20 space-y-2"> 
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-blue-400 rounded-md transition duration-300">About</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-blue-400 rounded-md transition duration-300">Skills</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-blue-400 rounded-md transition duration-300">Projects</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-blue-400 rounded-md transition duration-300">Experience & Education</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-blue-400 rounded-md transition duration-300">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-16">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="h-screen flex items-center justify-center bg-cover bg-center bg-slate-900" style="background-image: url('https://placehold.co/1920x1080/1a202c/63b3ed?text=Developer+Background');">
+            <div class="text-center p-8 bg-slate-900/80 rounded-xl shadow-2xl max-w-3xl mx-4 animate-fadeIn">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 text-blue-400">INAM ULLAH</h1>
+                <p class="text-2xl md:text-4xl font-light text-gray-200 mb-8">
+                    Front-End Web Developer, Aspiring Full-Stack Developer
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg transform hover:scale-105">
+                        Get in Touch
+                    </a>
+                </div>
+                <!-- Social Links -->
+                <div class="mt-8 flex justify-center space-x-6">
+                    <!-- LinkedIn Link (Updated) -->
+                    <a href="https://www.linkedin.com/in/engr-inam-ullah-057ab7344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300" title="LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-7 h-7"></i>
+                    </a>
+                    
+                    <!-- WhatsApp Link (New/Replaced) -->
+                    <a href="https://wa.me/923079813458" target="_blank" class="text-gray-400 hover:text-green-500 transition duration-300" title="WhatsApp Chat">
+                        <!-- Inline SVG for WhatsApp Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7 fill-current">
+                            <path d="M380.9 97.4C339.4 51.7 283.4 23.1 224 23.1 125.7 23.1 44.8 104 44.8 202.3c0 37.1 10.2 73 29.6 104.2l-32.9 120.3 123.4-32.5c28.9 15.8 61.2 24.3 94.6 24.3h.1c98.3 0 179.2-80.9 179.2-179.2 0-51.8-21.3-99.7-56.1-134.5zM224 430.2c-29.2 0-57.5-8-82.3-23.7l-5.6-3.3-57.4 15.1 15.4-56.3-3.6-5.8c-17.7-28.5-27.4-61.1-27.4-94.8 0-89.1 72.4-161.5 161.5-161.5 45.4 0 87.7 18.8 118.8 49.9 31.1 31.1 49.9 73.4 49.9 118.8 0 89.1-72.4 161.5-161.5 161.5zm96.7-111.7c-4.1-2.1-24.3-12-28.1-13.4-3.7-1.4-6.4-2.1-9.1 2.1-2.7 4.2-10.5 13.4-12.8 16.1-2.3 2.7-4.7 3-8.8.8-4.1-2.1-17.3-6.4-33.1-20.4-12.3-10.9-20.6-24.3-23-28.5-2.3-4.2-.2-6.4 1.9-8.5 1.9-1.9 4.1-4.7 6.2-7 2.1-2.3 2.7-4.1 4.1-7 1.4-2.7.7-5.2-.2-7-1.4-2.1-9.1-21.6-12.5-29.6-3.4-7.9-6.8-6.6-9.1-6.6-2.3 0-5-.3-7.7-.3-2.7 0-7 .7-10.7 3.5-3.7 3.4-14.2 13.9-14.2 33.9 0 19.9 14.5 39.1 16.6 41.9 2.1 2.7 28.5 43.6 69.1 60.1 40.5 16.5 48.4 13.5 57.7 12.6 9.3-.9 30-12.2 34.3-24 4.3-11.7 4.3-21.7 3-24.4-1.3-2.7-5-4.3-8.8-6.4z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Email Link (Updated mailto target) -->
+                    <a href="mailto:engrinamullah9@gmail.com" class="text-gray-400 hover:text-red-400 transition duration-300" title="Send Email">
+                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 md:py-28 bg-slate-800">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 border-b-2 border-blue-400 pb-2 inline-block mx-auto">About Me </h2>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/3 flex justify-center">
+                        <!-- Profile Image -->
+                        <img 
+                            src="images/profile.jpg" 
+                            alt="Profile Picture of Inam Ullah" 
+                            class="w-48 h-48 rounded-full object-cover border-4 border-blue-400 shadow-2xl"
+                            onerror="this.onerror=null; this.src='https://placehold.co/192x192/0b1424/63b3ed?text=IU';"
+                        >
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-gray-300">
+                        <p class="mb-4">
+                            I'm <span class="text-blue-300 font-semibold">Inam Ullah</span>, a passionate Web Developer currently pursuing a BS in Software Engineering (2022-2026) at the University of Malakand.
+                        </p>
+                        <p class="mb-4">
+                            I have hands-on experience with HTML, CSS, JavaScript, React.js, Bootstrap, PHP, and MySQL, focusing on creating responsive and user-friendly front-end applications.
+                        </p>
+                        <p>
+                            My experience includes an internship at <span class="text-blue-300 font-semibold">CodeAlpha</span>, where I enhanced my practical, teamwork, and problem-solving skills in developing interactive user interfaces. I am committed to continuous learning and aim to become a Full-Stack Developer, building innovative and efficient web solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-20 md:py-28 bg-slate-900">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-blue-400 border-b-2 border-blue-400 pb-2 inline-block mx-auto">Skills & Expertise</h2>
+
+                <!-- Technical Stack -->
+                <h3 class="text-2xl font-semibold mb-6 text-gray-200">Technical Stack</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+
+                    <!-- Skill Card Template -->
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="layout-grid" class="w-8 h-8 mx-auto mb-2 text-blue-400"></i>
+                        <p class="font-medium">HTML/CSS (Flexbox/Grid)</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="code" class="w-8 h-8 mx-auto mb-2 text-yellow-400"></i>
+                        <p class="font-medium">JavaScript (OOP, Async)</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="atom" class="w-8 h-8 mx-auto mb-2 text-cyan-400"></i>
+                        <p class="font-medium">React.js</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="boot" class="w-8 h-8 mx-auto mb-2 text-purple-400"></i>
+                        <p class="font-medium">Bootstrap</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="server" class="w-8 h-8 mx-auto mb-2 text-orange-400"></i>
+                        <p class="font-medium">PHP</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg hover:bg-slate-700 transition duration-300 transform hover:scale-[1.02] text-center">
+                        <i data-lucide="database" class="w-8 h-8 mx-auto mb-2 text-red-400"></i>
+                        <p class="font-medium">MySQL</p>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <h3 class="text-2xl font-semibold mb-6 text-gray-200 mt-10">Soft Skills</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg text-center border-b-4 border-blue-500">
+                        <i data-lucide="lightbulb" class="w-6 h-6 mx-auto mb-2 text-blue-400"></i>
+                        <p class="font-medium">Problem-Solving</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg text-center border-b-4 border-blue-500">
+                        <i data-lucide="users" class="w-6 h-6 mx-auto mb-2 text-blue-400"></i>
+                        <p class="font-medium">Teamwork</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg text-center border-b-4 border-blue-500">
+                        <i data-lucide="message-square" class="w-6 h-6 mx-auto mb-2 text-blue-400"></i>
+                        <p class="font-medium">Communication</p>
+                    </div>
+                    <div class="p-5 bg-slate-800 rounded-xl shadow-lg text-center border-b-4 border-blue-500">
+                        <i data-lucide="clock" class="w-6 h-6 mx-auto mb-2 text-blue-400"></i>
+                        <p class="font-medium">Time Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-20 md:py-28 bg-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-blue-400 border-b-2 border-blue-400 pb-2 inline-block mx-auto">Featured Projects</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Project Card 1: Image Gallery -->
+                    <div class="card-project bg-slate-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                        <i data-lucide="image" class="w-8 h-8 text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Image Gallery</h3>
+                        <p class="text-gray-300 mb-4 text-sm">A clean, responsive, and user-friendly front-end gallery built to showcase images effectively.</p>
+                        <span class="inline-block text-sm bg-blue-600 rounded-full px-3 py-1 text-white font-medium self-start">Front-End</span>
+                    </div>
+
+                    <!-- Project Card 2: Calculator App -->
+                    <div class="card-project bg-slate-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                        <i data-lucide="calculator" class="w-8 h-8 text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Calculator App</h3>
+                        <p class="text-gray-300 mb-4 text-sm">A functional, interactive calculator application developed to practice core JavaScript logic.</p>
+                        <span class="inline-block text-sm bg-yellow-600 rounded-full px-3 py-1 text-white font-medium self-start">JavaScript</span>
+                    </div>
+
+                    <!-- Project Card 3: Personal Portfolio Website -->
+                    <div class="card-project bg-slate-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                        <i data-lucide="Monitor-dot" class="w-8 h-8 text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Personal Portfolio Website</h3>
+                        <p class="text-gray-300 mb-4 text-sm">Self-created portfolio showcasing skills, projects, and professional background.</p>
+                        <span class="inline-block text-sm bg-cyan-600 rounded-full px-3 py-1 text-white font-medium self-start">React/Bootstrap</span>
+                    </div>
+
+                    <!-- Project Card 4: Music Player -->
+                    <div class="card-project bg-slate-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                        <i data-lucide="music" class="w-8 h-8 text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Music Player</h3>
+                        <p class="text-gray-300 mb-4 text-sm">A fully functional music player interface built primarily with vanilla JavaScript for dynamic control.</p>
+                        <span class="inline-block text-sm bg-green-600 rounded-full px-3 py-1 text-white font-medium self-start">JavaScript-Based</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Experience & Education Section -->
+        <section id="experience" class="py-20 md:py-28 bg-slate-900">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-blue-400 border-b-2 border-blue-400 pb-2 inline-block mx-auto">My Journey</h2>
+
+                <!-- Timeline Container -->
+                <div class="relative pl-8 md:pl-16">
+                    <div class="timeline-line hidden md:block"></div>
+
+                    <!-- Experience Entry -->
+                    <div class="mb-10 relative">
+                        <!-- Timeline Dot -->
+                        <div class="absolute w-4 h-4 rounded-full bg-blue-500 border-2 border-blue-200 -left-6 md:-left-2 timeline-dot"></div>
+                        <!-- Content, shifted right with pl-6 -->
+                        <div class="pl-6">
+                            <p class="text-sm text-gray-400 mb-1">Internship</p>
+                            <h3 class="text-2xl font-semibold text-blue-400">Front-End Web Developer</h3>
+                            <!-- Converted to clickable link with LinkedIn URL -->
+                            <a href="https://www.linkedin.com/company/codealpha" target="_blank" class="text-xl font-medium text-gray-200 hover:text-blue-300 transition block">CodeAlpha</a>
+                            <p class="text-sm text-gray-400">Gained practical experience in building interactive user interfaces, optimizing performance, and ensuring cross-browser compatibility. Enhanced teamwork and problem-solving skills.</p>
+                        </div>
+                    </div>
+
+                    <!-- Education Entries -->
+                    <div class="mb-10 relative">
+                        <!-- Timeline Dot -->
+                        <div class="absolute w-4 h-4 rounded-full bg-blue-500 border-2 border-blue-200 -left-6 md:-left-2 timeline-dot"></div>
+                        <!-- Content, shifted right with pl-6 -->
+                        <div class="pl-6">
+                            <p class="text-sm text-gray-400 mb-1">2022 - 2026 (Expected)</p>
+                            <h3 class="text-2xl font-semibold text-blue-400">BS Software Engineering</h3>
+                            <!-- Converted to clickable link -->
+                            <a href="https://uom.edu.pk/" target="_blank" class="text-xl font-medium text-gray-200 hover:text-blue-300 transition block">University of Malakand</a>
+                        </div>
+                    </div>
+
+                    <div class="mb-10 relative">
+                        <!-- Timeline Dot -->
+                        <div class="absolute w-4 h-4 rounded-full bg-blue-500 border-2 border-blue-200 -left-6 md:-left-2 timeline-dot"></div>
+                        <!-- Content, shifted right with pl-6 -->
+                        <div class="pl-6">
+                            <p class="text-sm text-gray-400 mb-1">2020 - 2022</p>
+                            <h3 class="text-2xl font-semibold text-blue-400">HSSC (Pre-Engineering)</h3>
+                            <!-- Converted to clickable link -->
+                            <a href="https://www.bisemalakand.edu.pk/" target="_blank" class="text-xl font-medium text-gray-200 hover:text-blue-300 transition block">BISE, Malakand</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <!-- Timeline Dot -->
+                        <div class="absolute w-4 h-4 rounded-full bg-blue-500 border-2 border-blue-200 -left-6 md:-left-2 timeline-dot"></div>
+                        <!-- Content, shifted right with pl-6 -->
+                        <div class="pl-6">
+                            <p class="text-sm text-gray-400 mb-1">2018 - 2020</p>
+                            <h3 class="text-2xl font-semibold text-blue-400">SSC (Science Group)</h3>
+                            <!-- Converted to clickable link -->
+                            <a href="https://www.bisemalakand.edu.pk/" target="_blank" class="text-xl font-medium text-gray-200 hover:text-blue-300 transition block">BISE, Malakand</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-20 md:py-28 bg-slate-800">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-blue-400 border-b-2 border-blue-400 pb-2 inline-block mx-auto">Contact Me</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Details -->
+                    <div class="space-y-8">
+                        
+                        <!-- Email Address -->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="mail" class="w-8 h-8 text-blue-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-200">Email Address</h4>
+                                <a href="mailto:engrinamullah9@gmail.com" class="text-gray-400 hover:text-blue-300 transition">engrinamullah9@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn Profile (NEW) -->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="linkedin" class="w-8 h-8 text-blue-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-200">LinkedIn Profile</h4>
+                                <a 
+                                    href="https://www.linkedin.com/in/engr-inam-ullah-057ab7344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                                    target="_blank" 
+                                    class="text-gray-400 hover:text-blue-300 transition block font-medium"
+                                >
+                                    /engr-inam-ullah-057ab7344
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp / Phone Section -->
+                        <div class="flex items-start space-x-4">
+                            <!-- Using phone icon to represent communication line -->
+                            <i data-lucide="phone" class="w-8 h-8 text-blue-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-200">WhatsApp / Phone</h4>
+                                <!-- WhatsApp Link -->
+                                <a href="https://wa.me/923079813458" target="_blank" class="text-gray-400 hover:text-green-500 transition block font-medium">
+                                    03079813458 (Click to WhatsApp)
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Location -->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="w-8 h-8 text-blue-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-200">Location</h4>
+                                <p class="text-gray-400">Khyber Pakhtunkhwa (KPK), Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Placeholder) -->
+                    <form class="bg-slate-700 p-8 rounded-xl shadow-2xl space-y-4">
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-300">Send a Message</h3>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-blue-500 text-white" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-blue-500 text-white" placeholder="Your Email">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-blue-500 text-white" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300 transform hover:scale-[1.01]">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 text-center text-gray-500 border-t border-slate-700">
+        <p>&copy; <span id="current-year"></span> Inam Ullah. All rights reserved.</p>
+        <p class="text-sm mt-2">Built with HTML, Tailwind CSS, and JavaScript.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
